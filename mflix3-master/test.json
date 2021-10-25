@@ -1,0 +1,17 @@
+{ _id: 'gen',
+  genres:
+  [ 'Action',
+    'Adventure',
+    'Biography',
+    'Comedy',
+    'Crime',
+    'Documentary',
+    'Drama',
+    'Family',
+    'Fantasy',
+    'History',
+    'Horror',
+    'Mystery',
+    'Romance',
+    'Sci-Fi',
+    'Thriller' ] }

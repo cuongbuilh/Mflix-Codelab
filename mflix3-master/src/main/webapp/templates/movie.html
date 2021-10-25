@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+
+<head th:replace="~{fragments/frontend::head}">
+    <link th:href="@{/css/main.css}" href="../css/main.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+          crossorigin="anonymous">
+</head>
+
+<body>
+
+<header th:insert="~{fragments/frontend::navbar}"></header>
+
+<main class="container mt-3" th:object="${movie}">
+    <h1 th:text="*{title}">Movie Name</h1>
+    <span th:text="*{year}">2017</span> - <span th:text="*{year}">88</span> mins
+
+    <div class="row  mt-3">
+        <div class="col-md-8 order-md-1 order-2">
+            <hr>
+            Genres: <span class="text-primary" th:each="gen,iterStat : *{genres}" th:text="${gen}+ ${!iterStat.last ? ', ' : ''}">Action, Crime, Drama</span>
+            <hr>
+            <span th:text="*{fullPlot}">Description</span>
+            <hr>
+            Director: <span class="text-primary" th:each="gen,iterStat : *{directors}" th:text="${gen}+ ${!iterStat.last ? ', ' : ''}">James</span>
+            <hr>
+            Writers: <span class="text-primary" th:each="gen,iterStat : *{writers}" th:text="${gen}+ ${!iterStat.last ? ', ' : ''}">David, Peter</span>
+            <hr>
+            Stars: <span class="text-primary" th:each="gen,iterStat : *{cast}" th:text="${gen}+ ${!iterStat.last ? ', ' : ''}">Tom Hanks, Leonardo</span>
+        </div>
+        <div class="col-md-4 order-md-2 order-1">
+            <img class="movie-poster" src="../images/wall1.jpg" th:src="*{poster}">
+        </div>
+    </div>
+</main>
+
+<footer th:insert="~{fragments/frontend::footer}">
+</footer>
+
+</body>
+</html>
